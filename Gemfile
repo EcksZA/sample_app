@@ -3,9 +3,9 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'pg'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
 end
 
@@ -17,8 +17,4 @@ end
 
 group :test do
   gem 'capybara'
-end
-
-group :production do
-  gem 'pg'
 end
