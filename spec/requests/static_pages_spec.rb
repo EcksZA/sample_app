@@ -27,13 +27,25 @@ describe 'Static pages' do
 
   describe 'About page' do
     it 'should have the h1 "About Us"' do
-      visit 'static_pages/about'
+      visit '/static_pages/about'
       page.should have_selector('h1', text: 'About Us')
     end
 
     it 'should have the title "About Us"' do
       visit '/static_pages/about'
       page.should have_title('| About Us')
+    end
+  end
+
+  describe 'Contact page' do
+    it 'should have the h1 title "Contact Us"' do
+      visit '/static_pages/contact'
+      page.should have_selector('h1', text: 'Contact Us')
+    end
+
+    it 'should have the title "Contact Us"' do
+      visit '/static_pages/contact'
+      page.should have_title('| Contact Us')
     end
   end
 end
