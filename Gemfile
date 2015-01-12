@@ -3,10 +3,13 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'pg'
+
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'sqlite3'
 end
 
 group :assets do
@@ -16,5 +19,7 @@ group :assets do
 end
 
 group :test do
+  gem 'rspec-rails'
   gem 'capybara'
+  gem 'spork'
 end
