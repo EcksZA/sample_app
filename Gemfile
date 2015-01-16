@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'bootstrap-sass', '2.0.0'
 
 group :production do
   gem 'pg'
