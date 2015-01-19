@@ -4,6 +4,7 @@ gem 'rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '2.0.0'
+gem 'bcrypt'
 
 group :production do
   gem 'pg'
