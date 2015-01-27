@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/contact' => 'static_pages#contact'
   get '/signup' => 'users#new'
   get '/signin' => 'sessions#new'
-  get '/signout' => 'sessions#destroy', via: :delete
+  delete '/signout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
