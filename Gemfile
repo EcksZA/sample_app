@@ -6,6 +6,8 @@ gem 'turbolinks'
 gem 'bootstrap-sass', '2.0.0'
 gem 'bcrypt'
 gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :production do
   gem 'pg'
