@@ -112,4 +112,18 @@ describe "Authentication" do
       end
     end
   end
+
+  describe "with valid information" do
+    let(:user) { FactoryGirl.create(:user) }
+    before { sign_in user }
+
+    it { should have_title(user.name) }
+
+    it { should have_link('Users',    href: users_path) }
+    it { should have_link('Profile',  href: users_path(user)) }
+    it { should have_link('Settings', href: edit_user_path(user)) }
+    it { should have_link('Sign out', href: signout_path) }
+
+    it { should_not have_link('Sign in',  href: signin_path) }
+  end
 end
