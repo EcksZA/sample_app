@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_filter :correct_user,    only: [:edit, :update]
   before_filter :signed_in_user,  only: [:index, :edit, :update]
   before_filter :correct_user,    only: [:edit, :update]
+  before_filter :admin_user,      only: :destroy
 
   def index
     @users = User.paginate(page: params[:page])
@@ -42,6 +43,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User destroyed"
+    redirect_to users_path
+  end
+
   private
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
@@ -61,5 +68,9 @@ class UsersController < ApplicationController
         store_location
         redirect_to signin_path, notice: "Please sign in."
       end
+    end
+
+    def admin_user
+      redirect_to(root_path) unless current_user.admin?
     end
 end
